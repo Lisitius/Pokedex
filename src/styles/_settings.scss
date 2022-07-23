@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "font1";
+  src: url(../assets/fonts/Pokemon\ GB.ttf);
+}
+
+$font1: "font1", sans-serif;
+
+$color1: #ffd700;
+$color2: #ff0000;
+$color3: #4169e1;
+$white: rgb(243, 243, 243);
+$black: #000000;
+
+@mixin verticalCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $white;
+  font-family: $font1;
+}
+
+li {
+  list-style-type: none;
+}
