@@ -1,0 +1,28 @@
+.navbar {
+  img {
+    width: 150px;
+    height: 70px;
+    position: absolute;
+  }
+
+  ul {
+    @include verticalCenter;
+    display: flex;
+    background-color: $color1;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 30px;
+
+    li {
+      color: $color3;
+      transition: 0.2s;
+      cursor: pointer;
+
+      &:hover {
+        color: $color2;
+      }
+    }
+  }
+}

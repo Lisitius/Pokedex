@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom";
 
+import logopoke from "../../assets/img/pokemon.png";
+
 const Navbar = () => {
   return (
     <div>
       <div className="navbar">
+        <img src={logopoke} alt="logo pokemon" />
         <ul>
           <NavLink to="/">
             <li>Home</li>
