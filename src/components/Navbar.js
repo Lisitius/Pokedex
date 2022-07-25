@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 
-import logopoke from "../../assets/img/home/pokemon.png";
+import logopoke from "../assets/img/home/pokemon.png";
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <div>
       <div className="navbar">
