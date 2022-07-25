@@ -1,0 +1,30 @@
+.homebody {
+  width: auto;
+  height: 885px;
+  background-color: $black;
+
+  color: $white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 30% 70%;
+  grid-template-columns: 55% 45%;
+  grid-template-areas:
+    "a c"
+    "b c";
+
+  .title {
+    grid-area: a;
+    font-size: 60px;
+  }
+
+  .video {
+    grid-area: b;
+  }
+
+  .pikachu {
+    grid-area: c;
+    width: 600px;
+    height: 600px;
+  }
+}
