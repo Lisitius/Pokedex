@@ -1,4 +1,4 @@
-import pika from "../../assets/img/home/pikachu.png";
+import pika from "../assets/img/home/pikachu.png";
 
 const Homebody = () => {
   return (
