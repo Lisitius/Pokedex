@@ -1,14 +1,17 @@
 .navbar {
+  @include verticalCenter;
+  flex-direction: row;
+  background-color: $color1;
+
   img {
     width: 150px;
     height: 70px;
-    position: absolute;
+    margin-right: auto;
   }
 
   ul {
-    @include verticalCenter;
     display: flex;
-    background-color: $color1;
+    margin-right: auto;
   }
 
   a {
@@ -23,6 +26,33 @@
       &:hover {
         color: $color2;
       }
+    }
+  }
+
+  @media screen and (max-width: 871px) {
+    img {
+      width: 90px;
+      height: 40px;
+    }
+
+    ul {
+      font-size: 10px;
+    }
+
+    a {
+      padding: 30px 10px;
+    }
+  }
+
+  @media screen and (max-width: 567px) {
+    img {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 280px) {
+    ul {
+      font-size: 8px;
     }
   }
 }

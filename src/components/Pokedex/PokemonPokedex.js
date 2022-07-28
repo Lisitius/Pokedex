@@ -1,33 +1,36 @@
-import bgpoke from "../../assets/img/background/bg-poke.jpg";
-import pika from "../../assets/img/home/pikachu.png";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import Card from "./Card";
 
 const PokemonPokedex = () => {
+  const [pokeData, setPokeData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const url = `https://pokeapi.co/api/v2/pokemon/?limit=151`;
+
+  const getPokemon = async (res) => {
+    res.map(async (item) => {
+      const result = await axios.get(item.url);
+      setPokeData((state) => {
+        state = [...state, result.data];
+        state.sort((a, b) => (a.id > b.id ? 1 : -1));
+        return state;
+      });
+    });
+  };
+
+  useEffect(() => {
+    const pokeFun = async () => {
+      setLoading(true);
+      const res = await axios.get(url);
+      getPokemon(res.data.results);
+      setLoading(false);
+    };
+    pokeFun();
+  }, [url]);
+
   return (
     <div className="pokedexContainer">
-      <img className="bgpoke" src={bgpoke} alt="map pokemon fond" />
-      <div className="card">
-        {/* début image */}
-        <div className="card-image">
-          <img className="image-poke" src={pika} alt="" />
-        </div>
-        {/* fin image */}
-        {/* début body */}
-        <div className="card-body">
-          {/*titre */}
-          <div className="card-title">
-            <h3>Ossekour</h3>
-          </div>
-          {/* fin titre */}
-          {/*début contenu */}
-          <div className="card-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
-              repudiandae?
-            </p>
-          </div>
-        </div>
-        {/* fin du body */}
-      </div>
+      <Card pokemon={pokeData} loading={loading} />
     </div>
   );
 };
