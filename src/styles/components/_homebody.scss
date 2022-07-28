@@ -1,0 +1,89 @@
+.homebody {
+  width: auto;
+  height: 785px;
+  background-color: $black;
+
+  color: $white;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-rows: 30% 70%;
+  grid-template-columns: 55% 45%;
+  grid-template-areas:
+    "a c"
+    "b c";
+
+  .title {
+    grid-area: a;
+    font-size: 60px;
+  }
+
+  .video {
+    grid-area: b;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    align-self: center;
+  }
+
+  .pikachu {
+    grid-area: c;
+    width: 500px;
+    height: 500px;
+  }
+
+  @media screen and (max-width: 1254px) {
+    .title {
+      font-size: 40px;
+    }
+    .video {
+      aspect-ratio: 16 / 9;
+    }
+    .pikachu {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  @media screen and (max-width: 893px) {
+    .title {
+      font-size: 40px;
+    }
+    .video {
+      aspect-ratio: 16 / 9;
+    }
+    .pikachu {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  @media screen and (max-width: 670px) {
+    .title {
+      font-size: 30px;
+    }
+    .video {
+      aspect-ratio: 16 / 9;
+    }
+    .pikachu {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 486px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .title {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    .video {
+      display: none;
+    }
+    .pikachu {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}

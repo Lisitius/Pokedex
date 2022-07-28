@@ -1,0 +1,47 @@
+.card-container {
+  .card {
+    width: 250px;
+    margin: 10px 10px;
+    background-color: $color3;
+    box-shadow: 0px 5px 20px #999;
+    border-radius: 10px;
+
+    :hover .card-image img {
+      width: 160%;
+    }
+
+    .card-image {
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+
+      .image-poke {
+        width: 60%;
+        height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition-property: filter width;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+      }
+    }
+
+    .card-body {
+      text-align: center;
+      padding: 10px 10px;
+      box-sizing: border-box;
+      font-size: 12px;
+
+      .idPoke {
+        margin-bottom: 15px;
+        font-size: 15px;
+      }
+
+      .card-title {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
