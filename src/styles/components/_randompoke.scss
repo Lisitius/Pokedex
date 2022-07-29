@@ -1,0 +1,48 @@
+.randompoke-container {
+  position: relative;
+  height: 785px;
+  @include verticalCenter;
+  flex-direction: column;
+
+  .imgpoke {
+    width: 100%;
+    max-width: 270px;
+    max-height: 270px;
+    margin-bottom: 10px;
+  }
+
+  .idpoke,
+  .btnpoke {
+    margin: 20px 0;
+  }
+
+  .btnpoke {
+    width: 230px;
+    height: 40px;
+    margin-top: 60px;
+    border-radius: 10px;
+    color: $white;
+    background-color: $black;
+    border: 1px solid $color2;
+    font-size: 15px;
+    font-family: "font1";
+    cursor: pointer;
+  }
+
+  .btnpoke:hover {
+    background-color: $white;
+    color: $black;
+  }
+}
+.randompoke-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../../assets/img/background/bg-poke.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 50%;
+  z-index: -1;
+}
