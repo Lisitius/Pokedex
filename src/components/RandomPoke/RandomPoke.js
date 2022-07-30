@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 //import pika from "../../assets/img/home/pikachu.png";
 
 const RandomPoke = () => {
@@ -7,12 +7,12 @@ const RandomPoke = () => {
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonImg, setPokemonImg] = useState("");
 
-  const fetchPokemon = () => {
-    const pokeNumber = Math.floor(Math.random() * 898) + 1;
+  const fetchPokemon = useCallback(() => {
+    const pokeNumber = Math.floor(Math.random() * 151) + 1;
     axios
       .get(`https://pokeapi.co/api/v2/pokemon/${pokeNumber}`)
       .then((res) => resultPokemon(res.data));
-  };
+  }, []);
 
   const resultPokemon = (data) => {
     setPokemonId(data.id);
@@ -22,8 +22,7 @@ const RandomPoke = () => {
 
   useEffect(() => {
     fetchPokemon();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchPokemon]);
 
   return (
     <div className="randompoke-container">
