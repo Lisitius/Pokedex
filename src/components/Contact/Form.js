@@ -39,23 +39,33 @@ const Form = () => {
         <label className="label-name">Name</label>
         <input
           className="form-name"
+          pattern="[A-Za-z0-9_]{1,15}"
           type="text"
           name="name"
           required
           autoComplete="off"
+          placeholder="Name"
         />
         <label className="label-email">Email</label>
         <input
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
           className="form-email"
           type="email"
           name="email"
           required
           autoComplee="off"
+          placeholder="Email"
         />
         <label className="label-message" required>
           Message
         </label>
-        <textarea className="form-mess" name="message" required />
+        <textarea
+          className="form-mess"
+          name="message"
+          required
+          placeholder="Message"
+          pattern="[A-Za-z0-9_]{1,999999}"
+        />
         <input className="submit" type="submit" value="Envoyer" />
       </form>
       <div className="form-message"></div>
