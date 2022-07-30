@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import logopoke from "../assets/img/home/pokemon.png";
 
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <div className="navbar">
       <img src={logopoke} alt="logo pokemon" />
@@ -13,10 +13,10 @@ export const Navbar = () => {
         <NavLink to="/pokedex">
           <li>Pokedex</li>
         </NavLink>
-        <NavLink to="randompoke">
+        <NavLink to="/randompoke">
           <li>Random Poke</li>
         </NavLink>
-        <NavLink to="contact">
+        <NavLink to="/contact">
           <li>Contact</li>
         </NavLink>
       </ul>
